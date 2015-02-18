@@ -1,4 +1,5 @@
-akselipalen.com
+# akselipalen.com
 
-Project started 3.10.2011
-Had some difficulties to get GIT working properly in Eclipse.
+Personal homepages of Akseli Palén.
+
+Project started 2011-10-03.

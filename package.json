@@ -1,0 +1,25 @@
+{
+  "name": "akselipalen",
+  "version": "0.2.0",
+  "description": "Personal homepages of Akseli Palen",
+  "keywords": [
+    "homepage"
+  ],
+  "homepage": "http://akselipalen.com",
+  "main": "index.html",
+  "author": {
+    "name": "Akseli Palen",
+    "email": "akseli.palen@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axelpale/akselipalen.git"
+  },
+  "license": "CC-BY-4.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "python -m SimpleHTTPServer",
+    "deploy": "rsync -r --delete ./* xeli@xeli.webfactional.com:~/webapps/akselipalenstatic/"
+  }
+}
