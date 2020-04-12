@@ -16,10 +16,26 @@
     "url": "https://github.com/axelpale/akselipalen.git"
   },
   "license": "CC-BY-4.0",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "tapspace": "^1.5.2",
+    "sprinkler": "^1.12.0"
+  },
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "ejs-loader": "^0.3.3",
+    "nodemon": "*",
+    "standard": "*",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
   "scripts": {
-    "start": "python -m SimpleHTTPServer",
-    "deploy": "rsync -r --delete ./* xeli@xeli.webfactional.com:~/webapps/akselipalenstatic/"
+    "build": "webpack",
+    "deploy": "rsync -r --delete ./* --include-from=\".deployinclude\" --exclude=\"*\" ./ xeli@xeli.webfactional.com:~/webapps/demos/sensibus",
+    "start": "nodemon --watch src --watch local_modules --exec 'npm run build'",
+    "lint": "standard 'src/**/*.js' && echo OK",
+    "lintfix": "standard --fix 'src/**/*.js' && echo OK",
+    "test": "npm run lint"
   }
 }
